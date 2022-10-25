@@ -40,6 +40,16 @@ for (let member of team){
 }
 
 for (let member of team){
-  output.innerHTML += `name: ${member.name} <br> role: ${member.role} <br> photo: <img src="${member.image}" alt="${member.image}"</img>`;
+  const card = `
+  <div class="card m-4 p-0" style="width: 18rem; border: none;">
+  <img src="${member.image}" class="card-img-top" alt="${member.name}">
+  <div class="card-body">
+    <h5 class="card-title text-secondary">${member.name}</h5>
+    <p class="card-text text-secondary">${member.role}</p>
+  </div>
+  </div>
+  `;
+
+  output.innerHTML += card;
 }
 
