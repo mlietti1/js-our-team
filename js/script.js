@@ -12,7 +12,7 @@ const team = [
   {
     name: "Walter Gordon",
     role: "Office Manager",
-    image: "..img/walter-gordon-office-manager.jpg"
+    image: "../img/walter-gordon-office-manager.jpg"
   },
   {
     name: "Angela Lopez",
@@ -27,12 +27,19 @@ const team = [
   {
     name: "Barbara Ramos",
     role: "Graphic Designer",
-    image: "barbara-ramos-graphic-designer.jpg"
+    image: "../img/barbara-ramos-graphic-designer.jpg"
   }
 ]
+
+const output = document.querySelector('.output');
 
 for (let member of team){
   console.log('name: ' + member.name);
   console.log('role: ' + member.role);
   console.log('image tag: ' + member.image);
 }
+
+for (let member of team){
+  output.innerHTML += `name: ${member.name} <br> role: ${member.role} <br> photo: <img src="${member.image}" alt="${member.image}"</img>`;
+}
+
