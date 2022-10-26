@@ -54,16 +54,17 @@ function drawTeamMember(teamMember){
   const role = teamMember.role;
   const image = teamMember.image;
 
-  const qualities = teamMember.qualities;
+  // const qualities = teamMember.qualities;
 
 
+  // add <p>${qualities.join(' - ')}</p> sotto testo
   prevContent += `
   <div class="card m-4 p-0" style="width: 18rem; border: none;">
   <div class="card-img-container"><img src="../img/${image}" class="card-img-top" alt="${name}"></div>
   <div class="card-body">
     <h5 class="card-title text-secondary">${name}</h5>
     <p class="card-text text-secondary">${role}</p>
-    <p>${qualities.join(' - ')}</p>
+    
   </div>
   </div>
   `;
@@ -74,30 +75,34 @@ function drawTeamMember(teamMember){
 
 // creare form html
 
-function addNewMember() {
-  const name = document.getElementById('name').value;
-  const role = document.getElementById('role').value;
-  const image = document.getElementById('image').value;
-  const qualities = document.getElementById('qualities').value;
+// function addNewMember() {
+//   const name = document.getElementById('name').value;
+//   const role = document.getElementById('role').value;
+//   const image = document.getElementById('image').value;
+//   const qualities = document.getElementById('qualities').value;
 
-  const newTeamMember = {
-    name: name,
-    role: role,
-    image: image,
-    qualities: qualities.split(',')
-  }
+//   const arrNewQualities = qualities.split(',');
 
-  drawTeamMember(newTeamMember);
+//   const cleanNewQualities = arrNewQualities.map( quality => quality.trim())
 
-  team.push(newTeamMember);
+//   const newTeamMember = {
+//     name: name,
+//     role: role,
+//     image: image,
+//     qualities: cleanNewQualities
+//   }
 
-  resetForm();
+//   drawTeamMember(newTeamMember);
 
-}
+//   team.push(newTeamMember);
 
-function resetForm(){
-  document.getElementById('name').value = '';
-  document.getElementById('role').value = '';
-  document.getElementById('image').value = '';
-  document.getElementById('qualities').value = '';
-}
+//   resetForm();
+
+// }
+
+// function resetForm(){
+//   document.getElementById('name').value = '';
+//   document.getElementById('role').value = '';
+//   document.getElementById('image').value = '';
+//   document.getElementById('qualities').value = '';
+// }
